@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Gen Z Soles — Thrifted Sneakers (Copy) (Copy)</title>
+<meta name="theme-color" content="#121013">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#121013; --bg-alt:#1b181c; --card:#1f1c21;
+    --text:#f4f1ea; --muted:#a39d97;
+    --pink:#ff3d6e; --gold:#e8b923;
+    --line: rgba(244,241,234,0.14);
+    --radius: 4px;
+    box-sizing:border-box;
+    padding-top: env(safe-area-inset-top,0px);
+    padding-bottom: env(safe-area-inset-bottom,0px);
+  }
+  *{box-sizing:inherit; margin:0; padding:0;}
+  html{scroll-behavior:smooth; scroll-padding-top: env(safe-area-inset-top,0px);}
+  html,body{height:100%;}
+  body{
+    background:var(--bg); color:var(--text);
+    font-family:'Space Grotesk',sans-serif;
+    overflow-x:hidden;
+  }
+  img{max-width:100%; display:block;}
+  .wrap{max-width:1120px; margin:0 auto; padding:0 24px;}
+  a{color:inherit;}
+  .display{font-family:'Anton',sans-serif; text-transform:uppercase; letter-spacing:0.01em; line-height:0.92;}
+
+  /* ---- NAV ---- */
+  header{
+    position:sticky; top:env(safe-area-inset-top,0px); z-index:50;
+    background:rgba(18,16,19,0.86); backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav{display:flex; align-items:center; justify-content:space-between; padding:16px 24px;}
+  .logo{font-family:'Anton',sans-serif; font-size:1.25rem; letter-spacing:0.02em;}
+  .logo span{color:var(--pink);}
+  .nav a.cta{
+    background:var(--pink); color:#12060a; font-weight:700; font-size:0.85rem;
+    padding:10px 18px; border-radius:100px; text-decoration:none;
+  }
+
+  /* ---- HERO ---- */
+  .hero{
+    position:relative; padding:96px 24px 110px; overflow:hidden;
+    border-bottom:1px solid var(--line);
+  }
+  .hero-tag{
+    display:inline-block; border:1px solid var(--line); border-radius:100px;
+    padding:6px 14px; font-size:0.8rem; color:var(--muted); margin-bottom:28px;
+  }
+  .hero-tag strong{color:var(--gold);}
+  h1.hero-title{
+    font-size:clamp(3rem, 9vw, 6.4rem); max-width:900px;
+  }
+  h1.hero-title em{ font-style:normal; color:var(--pink);}
+  .hero-sub{
+    max-width:520px; color:var(--muted); font-size:1.08rem; margin-top:26px; line-height:1.55;
+  }
+  .hero-actions{display:flex; gap:16px; margin-top:38px; flex-wrap:wrap;}
+  .btn{
+    display:inline-flex; align-items:center; gap:8px; text-decoration:none;
+    font-weight:700; font-size:0.95rem; padding:15px 28px; border-radius:100px;
+    transition:transform .15s ease;
+  }
+  .btn:hover{transform:translateY(-2px);}
+  .btn:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visible, button:focus-visible{
+    outline:2px solid var(--gold); outline-offset:3px;
+  }
+  .btn-primary{background:var(--pink); color:#170710;}
+  .btn-ghost{border:1px solid var(--line); color:var(--text);}
+  .hero-stripe{
+    position:absolute; right:-60px; top:40px; width:340px; height:340px;
+    border-radius:50%; background:radial-gradient(circle at 30% 30%, var(--gold) 0%, transparent 70%);
+    opacity:0.18; pointer-events:none;
+  }
+  @media(prefers-reduced-motion:no-preference){
+    .hero-stripe{ animation:float 9s ease-in-out infinite; }
+    @keyframes float{ 50%{ transform:translateY(24px);} }
+  }
+
+  /* ---- SECTION HEADS ---- */
+  .section{padding:88px 24px; border-bottom:1px solid var(--line);}
+  .section-head{display:flex; justify-content:space-between; align-items:flex-end; gap:24px; margin-bottom:48px; flex-wrap:wrap;}
+  .section-head h2{font-size:clamp(2rem,5vw,3rem);}
+  .section-head p{color:var(--muted); max-width:360px;}
+
+  /* ---- CATALOG ---- */
+  .grid{display:grid; grid-template-columns:repeat(auto-fill,minmax(250px,1fr)); gap:22px;}
+  .card{
+    background:var(--card); border:1px solid var(--line); border-radius:var(--radius);
+    overflow:hidden; display:flex; flex-direction:column;
+  }
+  .card-media{
+    aspect-ratio:1/1; display:flex; align-items:center; justify-content:center;
+    position:relative;
+  }
+  .card-media svg{width:64%; height:64%;}
+  .tag-cond{
+    position:absolute; top:10px; left:10px; background:var(--bg);
+    border:1px solid var(--line); font-size:0.68rem; padding:4px 9px; border-radius:100px; color:var(--gold);
+  }
+  .card-body{padding:16px 18px 18px; display:flex; flex-direction:column; gap:8px; flex:1;}
+  .card-body h3{font-size:1.05rem; font-weight:700;}
+  .meta-row{display:flex; justify-content:space-between; align-items:center; color:var(--muted); font-size:0.88rem;}
+  .price{color:var(--text); font-weight:700; font-size:1.1rem;}
+  .wa-btn{
+    margin-top:8px; text-align:center; text-decoration:none; font-weight:700; font-size:0.86rem;
+    padding:11px 14px; border-radius:100px; background:#1f6b40; color:#eafff0;
+  }
+  .wa-btn:hover{background:#25834e;}
+
+  /* ---- ABOUT ---- */
+  .about{display:grid; grid-template-columns:1.1fr 0.9fr; gap:56px; align-items:start;}
+  @media(max-width:760px){ .about{grid-template-columns:1fr;} }
+  .about p{color:var(--muted); line-height:1.7; margin-bottom:16px; max-width:60ch;}
+  .stat-list{display:grid; grid-template-columns:1fr 1fr; gap:16px;}
+  .stat{border:1px solid var(--line); border-radius:var(--radius); padding:20px; background:var(--bg-alt);}
+  .stat b{display:block; font-family:'Anton',sans-serif; font-size:2rem; color:var(--gold);}
+  .stat span{color:var(--muted); font-size:0.85rem;}
+
+  /* ---- ORDER FORM ---- */
+  .order-box{
+    display:grid; grid-template-columns:1fr 1fr; gap:40px; align-items:start;
+  }
+  @media(max-width:760px){ .order-box{grid-template-columns:1fr;} }
+  form{display:flex; flex-direction:column; gap:14px;}
+  label{font-size:0.85rem; color:var(--muted); margin-bottom:4px; display:block;}
+  input, select{
+    width:100%; background:var(--bg-alt); border:1px solid var(--line); color:var(--text);
+    padding:13px 14px; border-radius:var(--radius); font-family:inherit; font-size:0.95rem;
+  }
+  input::placeholder{color:#6b6560;}
+  .field{display:flex; flex-direction:column;}
+  .submit-btn{
+    background:var(--pink); color:#170710; border:none; font-weight:700; font-size:0.98rem;
+    padding:15px; border-radius:100px; cursor:pointer; margin-top:6px;
+  }
+  .submit-btn:hover{transform:translateY(-1px);}
+  .order-note{color:var(--muted); font-size:0.9rem; line-height:1.6;}
+  .order-note strong{color:var(--text);}
+
+  /* ---- FOOTER ---- */
+  footer{padding:56px 24px 90px; text-align:center;}
+  .ig-link{
+    display:inline-flex; align-items:center; gap:10px; text-decoration:none;
+    border:1px solid var(--line); padding:12px 22px; border-radius:100px; font-weight:700;
+    margin-bottom:22px;
+  }
+  .ig-link:hover{border-color:var(--pink);}
+  footer .fine{color:var(--muted); font-size:0.82rem;}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <div class="logo">GEN<span>Z</span> SOLES</div>
+    <a class="cta" href="#order">Order Now</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-stripe"></div>
+  <div class="wrap">
+    <div class="hero-tag">Pre-loved · Pre-approved · <strong>Karachi-wide delivery</strong></div>
+    <h1 class="hero-title display">Dead kicks<br>find a <em>new</em> owner.</h1>
+    <p class="hero-sub">Thrifted sneakers, hand-picked and checked pair by pair. No dupes, no damage swept under the rug — just certified fire at a fraction of retail.</p>
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="#catalog">Shop Now</a>
+      <a class="btn btn-ghost" href="https://instagram.com/genzsoles.pk" target="_blank" rel="noopener">@genzsoles.pk</a>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="catalog">
+  <div class="wrap">
+    <div class="section-head">
+      <h2 class="display">Featured Pairs</h2>
+      <p>This week's drop — sizes move fast, message before it's gone.</p>
+    </div>
+    <div class="grid" id="catalogGrid"></div>
+  </div>
+</section>
+
+<section class="section" id="about">
+  <div class="wrap about">
+    <div>
+      <h2 class="display" style="font-size:clamp(2rem,5vw,3rem); margin-bottom:22px;">Not just old shoes.<br>Vetted ones.</h2>
+      <p>Every pair that comes through Gen Z Soles gets inspected for sole wear, stitching, and authenticity before it's listed. We reject anything that won't hold up — no re-glued soles pretending to be mint.</p>
+      <p>You get real photos, honest condition tags (Like New / Lightly Worn / Loved), and a fair price — because a great sneaker shouldn't have a first-owner tax attached.</p>
+    </div>
+    <div class="stat-list">
+      <div class="stat"><b>100%</b><span>Hand-inspected pairs</span></div>
+      <div class="stat"><b>&lt;24h</b><span>Avg. WhatsApp reply</span></div>
+      <div class="stat"><b>3</b><span>Honest condition grades</span></div>
+      <div class="stat"><b>0</b><span>Fakes, ever</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="order">
+  <div class="wrap order-box">
+    <div>
+      <h2 class="display" style="font-size:clamp(2rem,5vw,3rem); margin-bottom:14px;">Place a Direct Order</h2>
+      <p class="order-note">Fill this in and we'll open WhatsApp with your order details ready to send — <strong>no account, no waiting</strong>. Confirm availability and pay on delivery or transfer.</p>
+      <form id="orderForm" style="margin-top:26px;">
+        <div class="field">
+          <label for="fname">Your name</label>
+          <input id="fname" placeholder="e.g. Ayesha Khan" required>
+        </div>
+        <div class="field">
+          <label for="fshoe">Shoe / model you want</label>
+          <input id="fshoe" placeholder="e.g. Nike Air Force 1, White" required>
+        </div>
+        <div class="field">
+          <label for="fsize">Size (UK/EU)</label>
+          <input id="fsize" placeholder="e.g. UK 8" required>
+        </div>
+        <div class="field">
+          <label for="fphone">Your WhatsApp number</label>
+          <input id="fphone" placeholder="e.g. 03xx-xxxxxxx" required>
+        </div>
+        <button class="submit-btn" type="submit">Send Order via WhatsApp</button>
+      </form>
+    </div>
+    <div class="stat" style="background:var(--bg-alt);">
+      <p style="color:var(--muted); line-height:1.7; font-size:0.95rem;">
+        <strong style="color:var(--text); display:block; margin-bottom:10px; font-size:1rem;">How it works</strong>
+        1. Fill the form or tap "Order via WhatsApp" on any pair.<br><br>
+        2. We confirm stock &amp; final price on chat.<br><br>
+        3. You choose delivery or pickup — Karachi-wide.
+      </p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <a class="ig-link" href="https://instagram.com/genzsoles.pk" target="_blank" rel="noopener">
+    Follow @genzsoles.pk on Instagram
+  </a>
+  <p class="fine">Gen Z Soles · Thrifted sneakers, Karachi · Replace the WhatsApp number in the code with your real business number.</p>
+</footer>
+
+<svg width="0" height="0" style="position:absolute">
+  <symbol id="shoe-icon" viewBox="0 0 64 64">
+    <path fill="currentColor" d="M4 40c0-3 2-5 5-6l10-3 6-8c2-3 5-4 8-3l16 5c4 1 7 4 8 8l2 8c1 3-1 6-4 6H8c-2 0-4-2-4-4v-3z"/>
+    <path fill="rgba(0,0,0,0.25)" d="M4 40h55v3c0 2-2 4-4 4H8c-2 0-4-2-4-4v-3z"/>
+  </symbol>
+</svg>
+
+<script>
+  const WHATSAPP_NUMBER = "923000000000"; // TODO: replace with your real WhatsApp number, country code first, no + or spaces
+
+  const shoes = [
+    { name:"Nike Air Force 1 '07", price:"Rs. 6,500", size:"UK 9", cond:"Like New", color:"#ff3d6e" },
+    { name:"Adidas Samba OG", price:"Rs. 5,200", size:"UK 7", cond:"Lightly Worn", color:"#e8b923" },
+    { name:"Converse Chuck 70", price:"Rs. 3,800", size:"UK 8", cond:"Loved", color:"#5aa9ff" },
+    { name:"New Balance 550", price:"Rs. 7,000", size:"UK 10", cond:"Like New", color:"#7ee08c" },
+    { name:"Vans Old Skool", price:"Rs. 3,200", size:"UK 6", cond:"Lightly Worn", color:"#ff8a5b" },
+    { name:"Nike Dunk Low", price:"Rs. 6,900", size:"UK 9", cond:"Like New", color:"#c77dff" },
+  ];
+
+  const grid = document.getElementById("catalogGrid");
+  shoes.forEach(s=>{
+    const msg = encodeURIComponent(`Hi! I'm interested in the ${s.name} (Size ${s.size}, ${s.price}) from Gen Z Soles. Is it still available?`);
+    const card = document.createElement("div");
+    card.className = "card";
+    card.innerHTML = `
+      <div class="card-media" style="background:${s.color}22; color:${s.color}">
+        <span class="tag-cond">${s.cond}</span>
+        <svg><use href="#shoe-icon"/></svg>
+      </div>
+      <div class="card-body">
+        <h3>${s.name}</h3>
+        <div class="meta-row"><span>Size ${s.size}</span><span class="price">${s.price}</span></div>
+        <a class="wa-btn" target="_blank" rel="noopener" href="https://wa.me/${WHATSAPP_NUMBER}?text=${msg}">Order via WhatsApp</a>
+      </div>`;
+    grid.appendChild(card);
+  });
+
+  document.getElementById("orderForm").addEventListener("submit", function(e){
+    e.preventDefault();
+    const name = document.getElementById("fname").value.trim();
+    const shoe = document.getElementById("fshoe").value.trim();
+    const size = document.getElementById("fsize").value.trim();
+    const phone = document.getElementById("fphone").value.trim();
+    const msg = encodeURIComponent(
+      `Hi Gen Z Soles! I'd like to place an order.\nName: ${name}\nShoe: ${shoe}\nSize: ${size}\nMy WhatsApp: ${phone}`
+    );
+    window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${msg}`, "_blank");
+  });
+</script>
+</body>
+</html>
